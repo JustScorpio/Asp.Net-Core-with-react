@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.SpaServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,5 +25,10 @@ app.MapControllerRoute(
     pattern: "{controller}/{action=Index}/{id?}");
 
 app.MapFallbackToFile("index.html");
+
+/*app.UseSpa((ISpaBuilder spaBuilder) =>
+{
+  spaBuilder.UseProxyToSpaDevelopmentServer(baseUri: "https://localhost:44428");
+});*/
 
 app.Run();
